@@ -1,4 +1,4 @@
-##This is the beginning of the ALX SE program (sprint 2)
+#This is the beginning of the ALX SE program (SPRINT 2)
 
 It covers: 
  - Python
