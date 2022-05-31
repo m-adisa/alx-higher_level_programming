@@ -1,1 +1,9 @@
-This begings the sprint 2 of the ALX SE program covering python, html, css, databases and more c programming.
+##This is the beginning of the ALX SE program (sprint 2)
+
+It covers: 
+ - Python
+ - HTML
+ - CSS
+ - Databases
+ - Data structures and Algorithms
+ - more C programming.
