@@ -1,0 +1,4 @@
+#!/usr/bin/pythom3
+
+from variable_load_5 import a
+print("{}".format(a))
