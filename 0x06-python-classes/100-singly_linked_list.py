@@ -29,7 +29,7 @@ class Node:
     @next_node.setter
     def next_node(self, value):
         if not isinstance(value, Node) and value is not None:
-            raise TypeError("next_node must be a Node Objext")
+            raise TypeError("next_node must be a Node objext")
         self.__next_node = value
 
 
@@ -47,8 +47,8 @@ class SinglyLinkedList:
             new.next_node = None
             self.__head = new
         elif self.__head.data > value:
-            new.next_node = self.__node
-            self.__node = new
+            new.next_node = self.__head
+            self.__head = new
         else:
             tmp = self.__head
             while (tmp.next_node is not None and tmp.next_done.data < value):
