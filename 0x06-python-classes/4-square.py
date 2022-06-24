@@ -10,7 +10,7 @@ class Square:
         Args:
             value (int): size of the square.
         """
-        self.size = size
+        self.__size = size
 
     @property
     def size(self):
@@ -22,7 +22,7 @@ class Square:
         return self.__size
 
     @size.setter
-    def size(size, value):
+    def size(self, value):
         """sets the conditions of the value of size
 
         Args:
