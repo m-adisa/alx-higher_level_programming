@@ -1,0 +1,46 @@
+The name saying function
+===========================
+
+The function says the name of the user
+--------------------------------------
+
+First import the function
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+The following tests describe the usage of the function
+>>> say_my_name("Joe", "Trump")
+My name is Joe Trump
+
+>>> say_my_name("Donald", "Biden")
+My name is Donald Biden
+
+>>> say_my_name("Obama")
+My name is Obama 
+ 
+>>> say_my_name(20, "Day")
+Traceback (innermost last):
+TypeError: first_name must be a string
+
+>>> say_my_name(None, "Johnson")
+Traceback (innermost last):
+TypeError: first_name must be a string
+
+>>> say_my_name("Borris", None)
+Traceback (innermost last):
+TypeError: last_name must be a string
+
+>>> say_my_name("Macron", 15.8)
+Traceback (innermost last):
+TypeError: last_name must be a string
+
+>>> say_my_name("", "Trump")
+My name is  Trump
+
+>>> say_my_name(None)
+Traceback (innermost last):
+TypeError: first_name must be a string
+
+>>> say_my_name("", "")
+My name is  
+
+Thank you!

@@ -1,0 +1,52 @@
+The matrix divider function
+===========================
+
+The function divides all elements of a matrix
+---------------------------------------------
+
+First import the function
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+The following tests describe the usage of the function
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> print(matrix_divided(matrix, 3))
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+>>> matrix = [["h", 2, 3], [4, 5, 6]]
+>>> print(matrix_divided(matrix, 3))
+Traceback (innermost last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = ["h", [4, 5, 6]]
+>>> print(matrix_divided(matrix, 3))
+Traceback (innermost last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [None, [4, 5, 6]]
+>>> print(matrix_divided(matrix, 3))
+Traceback (innermost last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> print(matrix_divided(matrix, "h"))
+Traceback (innermost last):
+TypeError: div must be a number
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> print(matrix_divided(matrix, None))
+Traceback (innermost last):
+TypeError: div must be a number
+
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> print(matrix_divided(matrix, 0))
+Traceback (innermost last):
+ZeroDivisionError: division by zero
+
+>>> matrix = [[1, 2, 3, 7], [4, 5, 6]]
+>>> print(matrix_divided(matrix, 3))
+Traceback (innermost last):
+TypeError: Each row of the matrix must have the same size
+
+Thank you!

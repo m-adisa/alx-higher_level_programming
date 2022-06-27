@@ -1,0 +1,37 @@
+The add integer function
+=========================
+
+The function returns the addition of two integers parameters a, b.
+------------------------------------------------------------------
+
+First import the function:
+>>> add_integer = __import__('0-add_integer').add_integer
+
+These examples demonstrate the usage of the function
+>>> add_integer(1, 2)
+3
+>>> add_integer(100, -2)
+98
+>>> add_integer(2)
+100
+>>> add_integer(100.3, -2)
+98
+>>> add_integer(53, 17.87)
+70
+>>> add_integer(6, "fan")
+Traceback (innermost last):
+TypeError: b must be an integer
+>>> add_integer("cow", 7)
+Traceback (innermost last):
+TypeError: a must be an integer
+>>> add_integer("cow")
+Traceback (innermost last):
+TypeError: a must be an integer
+>>> add_integer(None)
+Traceback (innermost last):
+TypeError: a must be an integer
+>>> add_integer('')
+Traceback (innermost last):
+TypeError: a must be an integer
+
+Thank you!
