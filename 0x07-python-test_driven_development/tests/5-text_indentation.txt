@@ -126,4 +126,3 @@ Passing a text with spaces and one new line 3
 
    >>> text_indentation("\n   ")
    <BLANKLINE>
-   
