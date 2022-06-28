@@ -1,66 +1,83 @@
 #!/usr/bin/python3
-"""Defines classes for a linked list"""
 
 
 class Node:
-    """Represents a node in a linked list"""
+    """Node of a singly linked list.
+    Private instance attribute: data:
+        - property def data(self)
+        - property setter def data(self, value)
+    Private instance attribute: next_node:
+        - property def next_node(self)
+        - property setter def next_node(self, value)
+    Instantiation with data and next_node.
+    """
+
     def __init__(self, data, next_node=None):
-        """Initialize the node"""
+        """Initializes the data of the node."""
         self.data = data
         self.next_node = next_node
 
     @property
     def data(self):
-        """Retrieves data from the node"""
+        """Retrieves the data from the node."""
         return self.__data
 
     @data.setter
     def data(self, value):
-        """Sets data into the node"""
+        """Sets the data into a node."""
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
         self.__data = value
 
     @property
     def next_node(self):
-        """Retrieves from the node"""
+        """Retrieves the next_node."""
         return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
+        """Sets the next_node."""
         if not isinstance(value, Node) and value is not None:
-            raise TypeError("next_node must be a Node objext")
+            raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
 
 class SinglyLinkedList:
-    """Represents a singly linked list"""
+    """ Singly linked list.
+    Private instance attribute: head.
+    Simple instantiation.
+    Public instance method: def sorted_insert(self, value).
+    """
 
     def __init__(self):
-        """Initialize a new Singly linked list"""
-        self.__head = None
-
-    def sorted_insert(self, value):
-        """Inserts a node in a sorted linked list"""
-        new = Node(value)
-        if self.__head is None:
-            new.next_node = None
-            self.__head = new
-        elif self.__head.data > value:
-            new.next_node = self.__head
-            self.__head = new
-        else:
-            tmp = self.__head
-            while (tmp.next_node is not None and tmp.next_done.data < value):
-                tmp = tmp.next_node
-            new.next_node = tmp.next_node
-            tmp.next_node = new
+        """Initializes the linked list."""
+        self.head = None
 
     def __str__(self):
-        """Defines the print() representation of the linked list"""
-        values = []
-        tmp = self.__head
-        while tmp is not None:
-            values.append(str(tmp.data))
-            tmp = tmp.next_node
-        return('\n'.join(values))
+        """For the print statement in the main file."""
+        my_str = ""
+        node = self.head
+        while node:
+            my_str += str(node.data)
+            my_str += '\n'
+            node = node.next_node
+        return my_str[:-1]
+
+    def sorted_insert(self, value):
+        """Inserts a node in a sorted linked list."""
+        new_node = Node(value)
+
+        if self.head is None:
+            self.head = new_node
+            return
+
+        if value < self.head.data:
+            new_node.next_node = self.head
+            self.head = new_node
+            return
+
+        node = self.head
+        while node.next_node and node.next_node.data < value:
+            node = node.next_node
+        new_node.next_node = node.next_node
+        node.next_node = new_node
