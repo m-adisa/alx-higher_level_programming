@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+"""Add all arguments to a Python list
+and save them to a file
+"""
+from sys import argv
+
+
+if __name__ == "__main__":
+    save_js = __import__('5-save_to_json_file').save_to_json_file
+    load_js = __import__('6-load_from_json_file').load_to_json_file
+
+    try:
+        items = load_js("add_item.json")
+    except FileNotFoundError:
+        items = []
+    items.extend(argv[1:])
+    save_js(items, "add_item.json")
