@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+"""Module 9-student.py
+1) class Student
+"""
+
+
+class Student:
+    """A clss that define a student by
+        - first name
+        - last name
+        - age
+    public method: to_json
+    """
+
+    def __init__(self, first_name, last_name, age):
+        """Instantiation of the class
+            - first_name, last_name, age
+        """
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+
+    def to_json(self):
+        """Returns the dictionary repersentation of an object"""
+        return self.__dict__.copy()
