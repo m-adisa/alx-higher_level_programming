@@ -26,7 +26,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-    
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """Returns the json representation of the argument
@@ -45,7 +45,7 @@ class Base:
             - cls
             - list_objs
         """
-        
+
         filename = cls.__name__ + ".json"
         with open(filename, "w") as jsfile:
             if list_objs is None:
