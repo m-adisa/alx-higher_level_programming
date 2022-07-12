@@ -44,7 +44,7 @@ class Rectangle(Base):
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
-            raise ValueError("width must be greater than 0")
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
@@ -67,7 +67,7 @@ class Rectangle(Base):
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
-            raise ValueError("height must be greater than 0")
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
@@ -89,8 +89,8 @@ class Rectangle(Base):
 
         if type(value) is not int:
             raise TypeError("x must be an integer")
-        if value <= 0:
-            raise ValueError("x must be greater than 0")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -112,6 +112,36 @@ class Rectangle(Base):
 
         if type(value) is not int:
             raise TypeError("y must be an integer")
-        if value <= 0:
-            raise ValueError("y must be greater than 0")
+        if value < 0:
+            raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """Returns the area value of the rectangle instance
+        Area: height x width
+        """
+
+        return self.height * self.width
+
+    def display(self):
+        """Prints in stdout, the Rectangle instance with the character #
+        with dimensions self.height and self.width
+        """
+
+        if self.width == 0 or self.height == 0:
+            print("")
+            return
+
+        [print("") for y in range(self.y)]
+        for h in range(self.height):
+            [print(" ", end="") for x in range(self.x)]
+            [print("#", end="") for w in range(self.width)]
+            print("")
+
+    def __str__:
+        """Returns a string representation of the Rectangle object
+        Prints all defining variables
+        """
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x,
+                                                       self.y, self.width,
+                                                       self.height)
