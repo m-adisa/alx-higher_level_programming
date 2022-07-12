@@ -3,6 +3,7 @@
 It contains the definition of class Base which other classes wil
 build on
 """
+import json
 
 
 class Base:
@@ -23,3 +24,30 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+    
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """Returns the json representation of the argument
+        Args:
+            - list_dictionaries
+        """
+
+        if list_dictionaries is None or list_dictionaries == []:
+            return "[]"
+        return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """Writes the JSON string representation of list_objs to a file
+        Args:
+            - cls
+            - list_objs
+        """
+        
+        filename = cls.__name__ + ".json"
+        with open(filename, "w") as jsfile:
+            if list_objs is None:
+                jsfile.write("[]")
+            else:
+                list_dicts = [o.to_dictionary() for o in list_objs]
+                jsfile.write(Base.to_json_string(list_dicts))
