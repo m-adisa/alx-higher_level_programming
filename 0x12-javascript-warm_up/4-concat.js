@@ -1,3 +1,5 @@
 #!/usr/bin/node
-const args = process.argv;
-console.log(args[2] + ' is ' + args[3]);
+const arg0 = process.argv[2];
+const arg1 = process.argv[3];
+
+console.log(arg0 + ' is ' + arg1);
